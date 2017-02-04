@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterEparks.master.cs" Inherits="EPARKS.MasterEparks" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <style type="text/css">
+
+        #Menu1 ul li ul
+        {
+            display :none;
+        }
+        #Menu1 ul li
+        {
+            position: relative;
+            float:left;
+            list-style:none;
+        }
+    </style>
+    </asp:ContentPlaceHolder>
+    </head>
+<body style="height: 100%; width: 100% ; margin:auto; min-width:60% ; max-width:200%">
+    <form id="form1" runat="server">
+    <div>
+        <asp:Image ID="Image1" runat="server" Height="298px" 
+            ImageUrl="~/Images/parking.jpg" Width="100%" />
+    </div>
+       
+        
+            <asp:Panel ID="Panel1" runat="server" BackColor="Pink">
+                <asp:Panel ID="Panel2" runat="server">
+                <div>
+               <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" >
+                     <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal"  
+                         DisappearAfter="0"  ItemWrap="True"  SkipLinkText=''
+                         StaticDisplayLevels="1">
+                         <Items>
+                             <asp:MenuItem NavigateUrl="~/HomePage.aspx" Text="Home" Value="Home" >
+                             </asp:MenuItem>
+                             <asp:MenuItem NavigateUrl="~/Registration.aspx" Text="Registration" 
+                                 Value="Registration"></asp:MenuItem>
+                             <asp:MenuItem Text="About us" Value="About us" NavigateUrl="~/Aboutus.aspx"></asp:MenuItem>
+                             <asp:MenuItem Text="Contact us" Value="Contact us" NavigateUrl="~/ContactUs.aspx"></asp:MenuItem>
+                         </Items>
+                         <StaticMenuItemStyle HorizontalPadding="30px" />
+                     </asp:Menu>
+                     
+                    </asp:ContentPlaceHolder> 
+                    </div>
+                    
+               
+                </asp:Panel>
+            </asp:Panel>
+
+     
+        
+                   <asp:Panel ID="Panel3" runat="server" BackColor="" BorderColor="#CCCCCC">
+                   <asp:ScriptManager ID="scriptmanagerformaster" runat="server"></asp:ScriptManager>
+                   <div>
+                   <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder></div>
+                   </asp:Panel>
+     
+        
+      
+    </form>
+    </body>
+</html>
